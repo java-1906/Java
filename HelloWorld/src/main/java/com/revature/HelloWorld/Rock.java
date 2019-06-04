@@ -1,7 +1,12 @@
 package com.revature.HelloWorld;
 
 public class Rock extends Choice {
-	public int didWin(Choice c) throws Exception {
+	
+	public Rock() {
+		displayName = "Rock";
+	}
+	
+	public int didWin(Choice c) throws IllegalArgumentException {
 		if (c instanceof Paper) {
 			return -1;
 		} else if (c instanceof Scissors) {
@@ -10,6 +15,6 @@ public class Rock extends Choice {
 			return 0;
 		}
 		
-		throw new Exception();
+		throw new IllegalArgumentException();
 	}
 }
