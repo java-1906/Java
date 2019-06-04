@@ -64,12 +64,16 @@ public class HelloWorld {
 		p1.setChoice(getUserChoice());
 		
 		// Set up the COM
-		int optionNum = new Random().nextInt(2) + 1;
+		int optionNum = new Random().nextInt(3) + 1;
 		Choice comChoice = getChoice(optionNum);
 		Player cpu = new Player("COM", comChoice);
 		System.out.println("Com chooses " + cpu.getChoice().getDisplayName());
 		
-		int result = p1.getChoice().didWin(cpu.getChoice());
+		// Determine the winner
+		int result;
+		Choice choice = p1.getChoice();
+		result = choice.didWin(cpu.getChoice());
+		
 		switch (result) {
 		case -1:
 			System.out.println("Sorry " + p1.getName() + " you have lost.");
