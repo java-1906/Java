@@ -28,7 +28,7 @@ public class HelloWorld {
 			} catch (NumberFormatException e) {
 				System.out.println("Not a valid number");
 				continue;
-			}			
+			}
 		
 			c = getChoice(option);
 		} while(c == null);
